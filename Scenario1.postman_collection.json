@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "e1bff5f8-7453-4900-bf12-85b3c85b8c5b",
+		"name": "Scenario1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user logs in",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = pm.response.json();",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"user logged in\", () => {",
+							"",
+							"    try {",
+							"",
+							"        pm.expect(ok).to.eq(true)",
+							"",
+							"    } catch (a) {",
+							"",
+							"        console.log(a)",
+							"",
+							"    }",
+							"",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://qa-challenge-api.scratchpay.com/api/auth?email=gianna@hightable.test&password=thedantonio1",
+					"protocol": "https",
+					"host": [
+						"qa-challenge-api",
+						"scratchpay",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "gianna@hightable.test"
+						},
+						{
+							"key": "password",
+							"value": "thedantonio1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "The logged in user tries to get a list of email addresses of practice id 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let jsonData = pm.response.json();",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"pm.test(\"the user is prevented from getting the list\", () => {",
+							"",
+							"    try {",
+							"",
+							"        pm.expect(1).to.eq(2)",
+							"",
+							"    } catch (a) {",
+							"",
+							"        console.log(a)",
+							"",
+							"    }",
+							"",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJnaWFubmFAaGlnaHRhYmxlLnRlc3QiLCJmaXJzdE5hbWUiOiJHaWFubmEiLCJsYXN0TmFtZSI6IkQnQW50b25pbyIsInN0YXR1cyI6ImFjdGl2ZSIsInJvbGUiOiJjbGluaWMiLCJpYXQiOjE2ODY4NjgyODEsImV4cCI6MTY4NzQ3MzA4MX0.FWz7bhfwTTmYIv_REFnDi9ghe-_5hqGs36OsuEzO6cU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://qa-challenge-api.scratchpay.com/api/clinics/2/emails?email=gianna@hightable.test",
+					"protocol": "https",
+					"host": [
+						"qa-challenge-api",
+						"scratchpay",
+						"com"
+					],
+					"path": [
+						"api",
+						"clinics",
+						"2",
+						"emails"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "gianna@hightable.test"
+						},
+						{
+							"key": "password",
+							"value": "thedantonio1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
